@@ -11,11 +11,7 @@
 
 - alpine basic build image
 
-## source repo
-
-[https://github.com/bridgewwater/template-docker-runtime-alpine](https://github.com/bridgewwater/template-docker-runtime-alpine)
-
-## fast use
+### fast use
 
 ```bash
 docker run --rm -it \
@@ -24,7 +20,11 @@ docker run --rm -it \
   bridgewwater/template-docker-runtime-alpine:latest
 ```
 
-## usage
+## source repo
+
+[https://github.com/bridgewwater/template-docker-runtime-alpine](https://github.com/bridgewwater/template-docker-runtime-alpine)
+
+## source usage
 
 ### dev mode
 
@@ -38,3 +38,5 @@ make dockerTestRestartLatest
 # remove test image
 make dockerTestPruneLatest
 ```
+
+then change github workflows config
