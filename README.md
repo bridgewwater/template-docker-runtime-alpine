@@ -36,7 +36,7 @@ make dockerEnv
 # then test image
 make dockerTestRestartLatest
 # remove test image
-make dockerTestPruneLatest
+make clean
 ```
 
 then change github workflows config
