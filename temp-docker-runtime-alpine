@@ -177,7 +177,7 @@ removeFileExist() {
   if [[ -f "${target_file_path}" ]]; then
     rm -f ${target_file_path}
     checkFuncBack "rm -f ${target_file_path}"
-    pI "removeFileExist ${target_file_path}"
+    # pI "removeFileExist ${target_file_path}"
   else
     pW "want remove file not exist at: ${target_file_path}"
   fi
@@ -255,6 +255,7 @@ replaceFileByRegular ${new_project}/Dockerfile ${temple_name} ${new_project}
 replaceFileByRegular ${new_project}/Dockerfile.s6 ${temple_group}\/${temple_name} ${new_repo_group}\/${new_project}
 replaceFileByRegular ${new_project}/Dockerfile.s6 ${temple_group} ${new_repo_group}
 replaceFileByRegular ${new_project}/Dockerfile.s6 ${temple_name} ${new_project}
+replaceFileByRegular ${new_project}/Makefile ${temple_group} ${new_repo_group}
 replaceFileByRegular ${new_project}/Makefile ${temple_name} ${new_project}
 replaceFileByRegular ${new_project}/package.json ${temple_group}\/${temple_name} ${new_repo_group}\/${new_project}
 replaceFileByRegular ${new_project}/package.json ${temple_name} ${new_project}
@@ -264,6 +265,8 @@ findFileReplaceByRegular ${new_project} "*.mk" ${temple_group} ${new_repo_group}
 findFileReplaceByRegular ${new_project} "*.mk" ${temple_name} ${new_project}
 findFileReplaceByRegular ${new_project} "*.md" ${temple_group} ${new_repo_group}
 findFileReplaceByRegular ${new_project} "*.md" ${temple_name} ${new_project}
+findFileReplaceByRegular ${new_project} "*.yml" ${temple_group} ${new_repo_group}
+findFileReplaceByRegular ${new_project} "*.yml" ${temple_name} ${new_project}
 
 # # remove README.md last line
 # if [[ ${release} -eq "Darwin" ]]; then
