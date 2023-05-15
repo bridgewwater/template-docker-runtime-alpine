@@ -78,6 +78,10 @@ env:
   IMAGE_NAME: template-docker-runtime-alpine
   DOCKER_IMAGE_PLATFORMS: linux/amd64,linux/386,linux/arm64,linux/arm
 
+permissions:
+  contents: write
+  discussions: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
