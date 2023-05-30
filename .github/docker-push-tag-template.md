@@ -16,6 +16,10 @@ on:
     tags:
       - '*' # Push events to matching *, i.e. 1.0.0 v1.0, v20.15.10
 
+permissions:
+  contents: write
+  discussions: write
+
 env:
   # name of docker image
   DOCKER_HUB_USER: sinlov
@@ -58,6 +62,14 @@ jobs:
 
         # docker push
         docker push $IMAGE_ID:$VERSION
+    - uses: softprops/action-gh-release@master # https://github.com/softprops/action-gh-release#-customizing
+      name: pre release
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        ## with permissions to create releases in the other repo
+        token: "${{ secrets.GITHUB_TOKEN }}"
+#        body_path: ${{ github.workspace }}-CHANGELOG.txt
+        prerelease: true
 
 ```
 
