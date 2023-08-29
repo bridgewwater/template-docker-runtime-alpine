@@ -3,16 +3,17 @@
 TOP_DIR := $(shell pwd)
 
 # default latest
-ENV_DIST_VERSION=latest
-ROOT_NAME=template-docker-runtime-alpine
+ENV_DIST_VERSION =latest
+ROOT_NAME =template-docker-runtime-alpine
 
 # MakeImage.mk settings start
-ROOT_OWNER=bridgewwater
-ROOT_PARENT_SWITCH_TAG:=3.12
+ROOT_OWNER =bridgewwater
+ROOT_PARENT_SWITCH_TAG :=3.17
 # for image local build
-INFO_TEST_BUILD_DOCKER_PARENT_IMAGE=alpine
-INFO_BUILD_DOCKER_FILE=Dockerfile
-INFO_TEST_BUILD_DOCKER_FILE=Dockerfile.s6
+INFO_TEST_BUILD_DOCKER_PARENT_IMAGE =alpine
+INFO_BUILD_DOCKER_FILE =Dockerfile
+INFO_TEST_BUILD_DOCKER_FILE =build.dockerfile
+INFO_TEST_BUILD_DOCKER_CONTAINER_ARGS =
 # MakeImage.mk settings end
 
 include z-MakefileUtils/MakeImage.mk

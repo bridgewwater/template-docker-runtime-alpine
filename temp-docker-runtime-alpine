@@ -35,9 +35,11 @@ HELP
 }
 
 ARG=$1
-if [[ "$ARG" =~ "-h" ]]; then
-  Usage
-  exit 0
+if [[ $# -eq 1 ]]; then
+  if [[ "$ARG" =~ "-h" ]]; then
+    Usage
+    exit 0
+  fi
 fi
 
 pV() {
@@ -252,9 +254,9 @@ replaceFileByRegular ${new_project}/README.md ${temple_group}\/${temple_name} ${
 replaceFileByRegular ${new_project}/Dockerfile ${temple_group}\/${temple_name} ${new_repo_group}\/${new_project}
 replaceFileByRegular ${new_project}/Dockerfile ${temple_group} ${new_repo_group}
 replaceFileByRegular ${new_project}/Dockerfile ${temple_name} ${new_project}
-replaceFileByRegular ${new_project}/Dockerfile.s6 ${temple_group}\/${temple_name} ${new_repo_group}\/${new_project}
-replaceFileByRegular ${new_project}/Dockerfile.s6 ${temple_group} ${new_repo_group}
-replaceFileByRegular ${new_project}/Dockerfile.s6 ${temple_name} ${new_project}
+replaceFileByRegular ${new_project}/build.dockerfile ${temple_group}\/${temple_name} ${new_repo_group}\/${new_project}
+replaceFileByRegular ${new_project}/build.dockerfile ${temple_group} ${new_repo_group}
+replaceFileByRegular ${new_project}/build.dockerfile ${temple_name} ${new_project}
 replaceFileByRegular ${new_project}/Makefile ${temple_group} ${new_repo_group}
 replaceFileByRegular ${new_project}/Makefile ${temple_name} ${new_project}
 replaceFileByRegular ${new_project}/package.json ${temple_group}\/${temple_name} ${new_repo_group}\/${new_project}
@@ -275,5 +277,9 @@ findFileReplaceByRegular ${new_project} "*.yml" ${temple_name} ${new_project}
 #   sed -i '70,84d' ./${new_project}/README.md
 # fi
 
+cd ${new_project}
+git init
+
+cd ..
 new_project="$(pwd)/${new_project}"
 echo -e "Finish make ${temple_name} project => \033[;32m${new_project}\033[0m"

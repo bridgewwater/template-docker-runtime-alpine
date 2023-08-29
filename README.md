@@ -32,7 +32,7 @@ docker run --rm -it \
 # check env
 make dockerEnv
 
-# change Dockerfile.s6
+# change build.dockerfile
 # then test image
 make dockerTestRestartLatest
 # remove test image
