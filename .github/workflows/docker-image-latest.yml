@@ -31,6 +31,22 @@ env:
 #  DOCKER_IMAGE_PLATFORMS: linux/amd64,linux/386,linux/arm64/v8,linux/arm/v7
 
 jobs:
+  info_print:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print args
+        run: |
+          echo " CI ${CI}"
+          echo " GITHUB_ACTION ${GITHUB_ACTION}"
+          echo " RUNNER_DEBUG ${RUNNER_DEBUG}"
+          echo " RUNNER_OS ${RUNNER_OS}"
+          echo " runner.os ${{ runner.os }}"
+          echo " RUNNER_ARCH ${RUNNER_ARCH}"
+          echo ""
+          echo "docker_hub_user= ${{ inputs.docker_hub_user }}"
+          echo "docker_image_name= ${{ inputs.docker_image_name }}"
+          echo "push_remote_flag= ${{ inputs.push_remote_flag }}"
+
   docker-image-buildx:
     strategy:
       matrix:
