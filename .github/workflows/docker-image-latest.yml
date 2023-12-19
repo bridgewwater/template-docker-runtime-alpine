@@ -34,7 +34,7 @@ jobs:
   info_print:
     runs-on: ubuntu-latest
     steps:
-      - name: print args
+      - name: print inputs args
         run: |
           echo " CI ${CI}"
           echo " GITHUB_ACTION ${GITHUB_ACTION}"
@@ -43,9 +43,35 @@ jobs:
           echo " runner.os ${{ runner.os }}"
           echo " RUNNER_ARCH ${RUNNER_ARCH}"
           echo ""
+          echo ""
+          echo " GITHUB_JOB ${GITHUB_JOB}"
+          echo " GITHUB_EVENT_NAME ${GITHUB_EVENT_NAME}"
+          echo " github.event_name ${{ github.event_name }}"
+          echo " github.event.pusher.name ${{ github.event.pusher.name }}"
+          echo " github.event.pusher.email ${{ github.event.pusher.email }}"
+          echo " github.event.sender.name ${{ github.event.sender.name }}"
+          echo " github.event.sender.email ${{ github.event.sender.email }}"
+          echo ""
+          echo " GITHUB_SHA ${GITHUB_SHA}"
+          echo " GITHUB_REF_TYPE ${GITHUB_REF_TYPE}"
+          echo " GITHUB_REF ${GITHUB_REF}"
+          echo " github.ref ${{ github.ref }}"
+          echo " GITHUB_REF_NAME ${GITHUB_REF_NAME}"
+          echo " GITHUB_BASE_REF ${GITHUB_BASE_REF}"
+          echo " github.base_ref ${{ github.base_ref }}"
+          echo " GITHUB_HEAD_REF ${GITHUB_HEAD_REF}"
+          echo " github.head_ref ${{ github.head_ref }}"
+          echo ""
+          echo " github.event.pull_request.title ${{ github.event.pull_request.title }}"
+          echo " github.event.pull_request.state ${{ github.event.pull_request.state }}"
+          echo " github.event.pull_request.merged ${{ github.event.pull_request.merged }}"
+          echo " github.event.pull_request.base.sha main ${{ github.event.pull_request.base.sha || 'main' }}"
+          echo " github.event.pull_request.head.sha github.ref ${{ github.event.pull_request.head.sha || github.ref }}"
+          echo ""
           echo "docker_hub_user= ${{ inputs.docker_hub_user }}"
           echo "docker_image_name= ${{ inputs.docker_image_name }}"
           echo "push_remote_flag= ${{ inputs.push_remote_flag }}"
+          echo "github.event.inputs.push_remote_flag= ${{ github.event.inputs.push_remote_flag }}"
 
   docker-image-buildx:
     strategy:
