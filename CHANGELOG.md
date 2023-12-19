@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.3.1](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.3.0...v0.3.1) (2023-12-19)
+
+### 👷‍ Build System
+
+* open platform: linux/arm64/v8 ([cbdb4123](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/cbdb41237e59d1c82ff040422aeac879b6a5a6d1))
+
+* change push_remote_flag right way to parse ([44da5b2d](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/44da5b2db0203cc9198d0e8b3f7b44584660e58e))
+
+* let tag must push at build ([1e6c1bcd](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/1e6c1bcdb74a151ce31159e554ecb7e1445f74ab))
+
 ## [0.3.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.2.0...v0.3.0) (2023-12-19)
 
 ### ✨ Features
