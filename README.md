@@ -31,17 +31,34 @@ docker run --rm -it \
 
 ## source usage
 
+### todo-list
+
+- rename `bridgewwater/template-docker-runtime-alpine` to new github url
+- rename docker hub user `bridgewwater` to new org or user
+- rename docker hub `template-docker-runtime-alpine` to new docker image name
+- add [secrets](https://github.com/bridgewwater/template-docker-runtime-alpine/settings/secrets/actions) `New repository secret` name `DOCKERHUB_TOKEN` from [hub.docker](https://hub.docker.com/settings/security)
+
 ### dev mode
 
 ```bash
+# see help
+$ make help
+# see or check build env
+$ make env
+
+# fast build
+$ make all
+# clean build
+$ make clean
+
 # check env
-make dockerEnv
+$ make dockerEnv
 
 # change build.dockerfile
 # then test image
-make dockerTestRestartLatest
-# remove test image
-make clean
+$ make dockerTestRestartLatest
+# remove build image
+$ make clean
 ```
 
 then change github workflows config to use
