@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.3.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.2.0...v0.3.0) (2023-12-19)
+
+### ✨ Features
+
+* can close docker-image-tag push to deploy ([8e49e0e2](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/8e49e0e2d10239404e9b36b3fb047c057aae5014))
+
 ## [0.2.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.1.0...v0.2.0) (2023-12-19)
 
 ### ✨ Features
