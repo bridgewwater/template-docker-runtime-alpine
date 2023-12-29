@@ -1,6 +1,6 @@
 # This dockerfile uses extends image https://hub.docker.com/_/alpine
 # VERSION 1
-# Author: sinlov
+# Author: template-hub-user
 # dockerfile offical document https://docs.docker.com/engine/reference/builder/
 # maintainer="https://github.com/bridgewwater/template-docker-runtime-alpine"
 
