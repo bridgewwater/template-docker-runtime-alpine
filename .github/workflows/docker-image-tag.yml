@@ -19,6 +19,11 @@ on:
         default: true
         required: false
         type: boolean
+      docker_tag_postfix:
+        description: 'postfix for tag like: -slim, -debian, -alpine'
+        default: ''
+        required: false
+        type: string
 
 env:
   DOCKER_IMAGE_PLATFORMS: linux/amd64,linux/arm64/v8 # change to your platforms for release
@@ -62,7 +67,7 @@ jobs:
           file: Dockerfile
           platforms: ${{ matrix.docker_image.platform }}
           labels: ${{ steps.meta.outputs.labels }}
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ steps.meta.outputs.tags }}${{ inputs.docker_tag_postfix}}
           no-cache: false
           pull: true
           push: false
@@ -106,7 +111,7 @@ jobs:
           file: Dockerfile
           platforms: ${{ env.DOCKER_IMAGE_PLATFORMS }}
           labels: ${{ steps.meta.outputs.labels }}
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: ${{ steps.meta.outputs.tags }}${{ inputs.docker_tag_postfix}}
           no-cache: false
           pull: true
           push: true

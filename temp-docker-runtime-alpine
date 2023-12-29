@@ -6,6 +6,7 @@ temple_repo_host="github.com"
 temple_group="bridgewwater"
 temple_name="template-docker-runtime-alpine"
 temple_branch="main"
+temple_hub_user="hub-user-${temple_group}"
 
 new_repo_host=${temple_repo_host}
 new_repo_group=${temple_group}
@@ -26,11 +27,11 @@ default repo setting
   group/user: ${temple_group}
   reop host : ${temple_repo_host}
 
-Usage: ${shell_run_name} [newproject] [new group/user] [new host]
+Usage: ${shell_run_name} [newproject] [new group/user] [new host] [new hub user]
 
 Example:
     ${shell_run_name} docker-new-runtime
-    ${shell_run_name} docker-new-runtime sinlov github.com
+    ${shell_run_name} docker-new-runtime sinlov github.com sinlov
 HELP
 }
 
@@ -231,12 +232,20 @@ else
   new_repo_host=${temple_repo_host}
 fi
 
+if [[ -n $4 ]]; then
+  new_hub_user="$4"
+else
+  #   echo "set default hub user: ${temple_hub_user}"
+  new_hub_user=${temple_hub_user}
+fi
+
 echo -e "=> temple url: ${temple_url}
 => temple_branch:  ${temple_branch}
 -> new_repo_host:  ${new_repo_host}
 -> new_group:      ${new_repo_group}
 -> new_project:    ${new_project}
--> new remote url: http://${new_repo_host}/${new_repo_group}/${new_project}
+-> new_hub_user:   ${new_hub_user}
+-> new remote url: https://${new_repo_host}/${new_repo_group}/${new_project}
 "
 
 pI "Clone from ${temple_url}"
@@ -259,6 +268,7 @@ replaceFileByRegular ${new_project}/build.dockerfile ${temple_group} ${new_repo_
 replaceFileByRegular ${new_project}/build.dockerfile ${temple_name} ${new_project}
 replaceFileByRegular ${new_project}/Makefile ${temple_group} ${new_repo_group}
 replaceFileByRegular ${new_project}/Makefile ${temple_name} ${new_project}
+replaceFileByRegular ${new_project}/Makefile ${temple_hub_user} ${new_hub_user}
 replaceFileByRegular ${new_project}/package.json ${temple_group}\/${temple_name} ${new_repo_group}\/${new_project}
 replaceFileByRegular ${new_project}/package.json ${temple_name} ${new_project}
 # replace code at folder
@@ -269,6 +279,7 @@ findFileReplaceByRegular ${new_project} "*.md" ${temple_group} ${new_repo_group}
 findFileReplaceByRegular ${new_project} "*.md" ${temple_name} ${new_project}
 findFileReplaceByRegular ${new_project} "*.yml" ${temple_group} ${new_repo_group}
 findFileReplaceByRegular ${new_project} "*.yml" ${temple_name} ${new_project}
+findFileReplaceByRegular ${new_project} "*.yml" ${temple_hub_user} ${new_hub_user}
 
 # # remove README.md last line
 # if [[ ${release} -eq "Darwin" ]]; then
@@ -282,4 +293,5 @@ git init
 
 cd ..
 new_project="$(pwd)/${new_project}"
+echo "please add secrets key: DOCKERHUB_TOKEN at https://${new_repo_host}/${new_repo_group}/${new_project}/settings/secrets/actions"
 echo -e "Finish make ${temple_name} project => \033[;32m${new_project}\033[0m"
