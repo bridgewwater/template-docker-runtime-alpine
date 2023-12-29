@@ -7,7 +7,7 @@ ENV_DIST_VERSION =latest
 ROOT_NAME =template-docker-runtime-alpine
 
 # MakeImage.mk settings start
-ROOT_OWNER =hub-user-bridgewwater
+ROOT_OWNER =bridgewwater-hub-user
 ROOT_PARENT_SWITCH_TAG :=3.19.0
 # for image local build
 INFO_TEST_BUILD_DOCKER_PARENT_IMAGE =alpine

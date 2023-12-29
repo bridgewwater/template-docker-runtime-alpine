@@ -6,7 +6,7 @@ temple_repo_host="github.com"
 temple_group="bridgewwater"
 temple_name="template-docker-runtime-alpine"
 temple_branch="main"
-temple_hub_user="hub-user-${temple_group}"
+temple_hub_user="${temple_group}-hub-user"
 
 new_repo_host=${temple_repo_host}
 new_repo_group=${temple_group}
@@ -279,6 +279,7 @@ findFileReplaceByRegular ${new_project} "*.mk" ${temple_group} ${new_repo_group}
 findFileReplaceByRegular ${new_project} "*.mk" ${temple_name} ${new_project}
 findFileReplaceByRegular ${new_project} "*.md" ${temple_group} ${new_repo_group}
 findFileReplaceByRegular ${new_project} "*.md" ${temple_name} ${new_project}
+findFileReplaceByRegular ${new_project} "*.md" ${temple_hub_user} ${new_hub_user}
 findFileReplaceByRegular ${new_project} "*.yml" ${temple_group} ${new_repo_group}
 findFileReplaceByRegular ${new_project} "*.yml" ${temple_name} ${new_project}
 findFileReplaceByRegular ${new_project} "*.yml" ${temple_hub_user} ${new_hub_user}

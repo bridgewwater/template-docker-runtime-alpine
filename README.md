@@ -22,7 +22,7 @@
 docker run --rm -it \
   --entrypoint /bin/sh \
   --name "test-template-docker-runtime-alpine" \
-  bridgewwater/template-docker-runtime-alpine:latest
+  bridgewwater-hub-user/template-docker-runtime-alpine:latest
 ```
 
 ## source repo
@@ -34,7 +34,7 @@ docker run --rm -it \
 ### todo-list
 
 - rename `bridgewwater/template-docker-runtime-alpine` to new github url
-- rename docker hub user `bridgewwater` to new org or user
+- rename docker hub user `bridgewwater-hub-user` to new org or user
 - rename docker hub `template-docker-runtime-alpine` to new docker image name
 - add [secrets](https://github.com/bridgewwater/template-docker-runtime-alpine/settings/secrets/actions) `New repository secret` name `DOCKERHUB_TOKEN` from [hub.docker](https://hub.docker.com/settings/security)
 - change `DOCKER_IMAGE_PLATFORMS: linux/amd64,linux/arm64/v8` to your need [docker buildx](https://docs.docker.com/buildx/working-with-buildx/)
