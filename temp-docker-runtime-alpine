@@ -239,13 +239,15 @@ else
   new_hub_user=${temple_hub_user}
 fi
 
+new_git_http_url=https://${new_repo_host}/${new_repo_group}/${new_project}
+
 echo -e "=> temple url: ${temple_url}
 => temple_branch:  ${temple_branch}
 -> new_repo_host:  ${new_repo_host}
 -> new_group:      ${new_repo_group}
 -> new_project:    ${new_project}
 -> new_hub_user:   ${new_hub_user}
--> new remote url: https://${new_repo_host}/${new_repo_group}/${new_project}
+-> new remote url: ${new_git_http_url}
 "
 
 pI "Clone from ${temple_url}"
@@ -292,6 +294,6 @@ cd ${new_project}
 git init
 
 cd ..
-new_project="$(pwd)/${new_project}"
-echo "please add secrets key: DOCKERHUB_TOKEN at https://${new_repo_host}/${new_repo_group}/${new_project}/settings/secrets/actions"
+
 echo -e "Finish make ${temple_name} project => \033[;32m${new_project}\033[0m"
+echo "please add secrets key: DOCKERHUB_TOKEN at ${new_git_http_url}/settings/secrets/actions"
