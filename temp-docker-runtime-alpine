@@ -6,7 +6,7 @@ temple_repo_host="github.com"
 temple_group="bridgewwater"
 temple_name="template-docker-runtime-alpine"
 temple_branch="main"
-temple_hub_user="${temple_group}-hub-user"
+temple_hub_user="template-hub-user"
 
 new_repo_host=${temple_repo_host}
 new_repo_group=${temple_group}

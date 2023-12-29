@@ -4,13 +4,13 @@
 [![GitHub latest SemVer tag)](https://img.shields.io/github/v/tag/bridgewwater/template-docker-runtime-alpine)](https://github.com/bridgewwater/template-docker-runtime-alpine/tags)
 [![GitHub release)](https://img.shields.io/github/v/release/bridgewwater/template-docker-runtime-alpine)](https://github.com/bridgewwater/template-docker-runtime-alpine/releases)
 
-[![docker version semver](https://img.shields.io/docker/v/bridgewwater/template-docker-runtime-alpine?sort=semver)](https://hub.docker.com/r/bridgewwater/template-docker-runtime-alpine)
-[![docker image size](https://img.shields.io/docker/image-size/bridgewwater/template-docker-runtime-alpine)](https://hub.docker.com/r/bridgewwater/template-docker-runtime-alpine)
-[![docker pulls](https://img.shields.io/docker/pulls/bridgewwater/template-docker-runtime-alpine)](https://hub.docker.com/r/bridgewwater/template-docker-runtime-alpine/tags?page=1&ordering=last_updated)
+[![docker version semver](https://img.shields.io/docker/v/template-hub-user/template-docker-runtime-alpine?sort=semver)](https://hub.docker.com/r/template-hub-user/template-docker-runtime-alpine)
+[![docker image size](https://img.shields.io/docker/image-size/template-hub-user/template-docker-runtime-alpine)](https://hub.docker.com/r/template-hub-user/template-docker-runtime-alpine)
+[![docker pulls](https://img.shields.io/docker/pulls/template-hub-user/template-docker-runtime-alpine)](https://hub.docker.com/r/template-hub-user/template-docker-runtime-alpine/tags?page=1&ordering=last_updated)
 
 # template-docker-runtime-alpine
 
-- docker hub see [https://hub.docker.com/r/bridgewwater/template-docker-runtime-alpine](https://hub.docker.com/r/bridgewwater/template-docker-runtime-alpine)
+- docker hub see [https://hub.docker.com/r/template-hub-user/template-docker-runtime-alpine](https://hub.docker.com/r/template-hub-user/template-docker-runtime-alpine)
 
 ## for
 
@@ -22,7 +22,7 @@
 docker run --rm -it \
   --entrypoint /bin/sh \
   --name "test-template-docker-runtime-alpine" \
-  bridgewwater-hub-user/template-docker-runtime-alpine:latest
+  template-hub-user/template-docker-runtime-alpine:latest
 ```
 
 ## source repo
@@ -34,7 +34,7 @@ docker run --rm -it \
 ### todo-list
 
 - rename `bridgewwater/template-docker-runtime-alpine` to new github url
-- rename docker hub user `bridgewwater-hub-user` to new org or user
+- rename docker hub user `template-hub-user` to new org or user
 - rename docker hub `template-docker-runtime-alpine` to new docker image name
 - add [secrets](https://github.com/bridgewwater/template-docker-runtime-alpine/settings/secrets/actions) `New repository secret` name `DOCKERHUB_TOKEN` from [hub.docker](https://hub.docker.com/settings/security)
 - change `DOCKER_IMAGE_PLATFORMS: linux/amd64,linux/arm64/v8` to your need [docker buildx](https://docs.docker.com/buildx/working-with-buildx/)
