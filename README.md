@@ -36,10 +36,17 @@ docker run --rm -it \
 - rename `bridgewwater/template-docker-runtime-alpine` to new github url
 - rename docker hub user `template-hub-user` to new org or user
 - rename docker hub `template-docker-runtime-alpine` to new docker image name
-- add [secrets](https://github.com/bridgewwater/template-docker-runtime-alpine/settings/secrets/actions) `New repository secret` name `DOCKERHUB_TOKEN` from [hub.docker](https://hub.docker.com/settings/security)
+
+- use github action for this workflow push to docker hub, must add at github secrets
+    - `DOCKERHUB_OWNER` user of docker hub
+    - `DOCKERHUB_REPO_NAME` repo name of docker hub
+    - `DOCKERHUB_TOKEN` token of docker hub user from [hub.docker](https://hub.docker.com/settings/security)
+
 - change `DOCKER_IMAGE_PLATFORMS: linux/amd64,linux/arm64/v8` to your need [docker buildx](https://docs.docker.com/buildx/working-with-buildx/)
   - also change `jobs.docker-image-buildx.strategy.matrix.docker_image.[platform]` same as `DOCKER_IMAGE_PLATFORMS`
 - change `push_remote_flag: ${{ github.event.pull_request.merged == true }}` to let latest tag push to docker hub
+
+
 
 ### dev mode
 
