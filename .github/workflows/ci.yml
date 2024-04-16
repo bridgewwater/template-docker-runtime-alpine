@@ -7,7 +7,14 @@ on:
     branches:
       - 'main'
       - 'release-*'
-      - 'hotfix-*'
+      - 'FE-*'
+      - '*-feature-*'
+      - 'BF-*'
+      - '*-bug-*'
+      - 'PU-*'
+      - 'DOC-*'
+      - '*-documentation-*'
+      - '*-hotfix-*'
     tags:
       - '*' # Push events to matching *, i.e. 1.0.0 v1.0, v20.15.10
   pull_request:
@@ -17,15 +24,11 @@ on:
       - opened
       - reopened
       - closed
-    branches:
-      - 'main'
-      - 'release-*'
-      - 'iteration-*'
-      - 'FE-*'
-      - 'BF-*'
-      - 'PU-*'
-      - 'DOC-*'
-      - 'hotfix-*'
+    # branches:
+    #   - 'main'
+    #   - 'release-*'
+    #   - 'DOC-*'
+    #   - 'hotfix-*'
 
 permissions: # https://docs.github.com/actions/using-workflows/workflow-syntax-for-github-actions#permissions
   contents: write
@@ -38,13 +41,26 @@ jobs:
     uses: ./.github/workflows/version.yml
     secrets: inherit
 
-  docker-buildx-bake-hubdocker-latest:
-    name: docker-buildx-bake-hubdocker-latest
+  # docker-buildx-bake-hubdocker-latest:
+  #   name: docker-buildx-bake-hubdocker-latest
+  #   needs:
+  #     - version
+  #   uses: ./.github/workflows/docker-buildx-bake-hubdocker-latest.yml
+  #   # if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/main' ) || github.base_ref == 'main' }}
+  #   with:
+  #     # push_remote_flag: ${{ github.ref == 'refs/heads/main' }}
+  #     push_remote_flag: ${{ github.event.pull_request.merged == true }}
+  #   secrets:
+  #     DOCKERHUB_TOKEN: "${{ secrets.DOCKERHUB_TOKEN }}"
+
+  docker-buildx-bake-multi-latest:
+    name: docker-buildx-bake-multi-latest
     needs:
       - version
-    uses: ./.github/workflows/docker-buildx-bake-hubdocker-latest.yml
-    if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/main' ) || ( github.base_ref == 'main' && github.event.pull_request.merged == true ) }}
+    uses: ./.github/workflows/docker-buildx-bake-multi-latest.yml
+    # if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/main' ) || github.base_ref == 'main' }}
     with:
+      ghcr_package_owner_name: ${{ github.repository_owner }} # required for ghcr.io
       # push_remote_flag: ${{ github.ref == 'refs/heads/main' }}
       push_remote_flag: ${{ github.event.pull_request.merged == true }}
     secrets:
