@@ -140,7 +140,9 @@ jobs:
             ${{ inputs.docker_bake_config_file_path }}
             /tmp/bake-meta.json
           targets: image
+          no-cache: true
           provenance: false
+          sbom: false
           set: |
             *.tags=
             *.platform=${{ matrix.platform }}
