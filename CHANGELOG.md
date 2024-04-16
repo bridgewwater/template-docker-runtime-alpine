@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.4.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.3.1...v0.4.0) (2024-04-16)
+
+### ✨ Features
+
+* update template and set of docker-image-* ([bd7d5dbe](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/bd7d5dbed18a64def378a92858e1d12c348ea116))
+
+* update actions/download-artifact@v4 ([0f8f3723](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/0f8f37233dcb1c990a1b25acb23fc815a124ad17))
+
+* change more info at hub use at build ([400aa78b](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/400aa78b4715260779ef28406b528c50a6ce3f14))
+
+* change hub user to template-hub-user ([dbf81710](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/dbf81710387872635731ef62880087039a7b188f))
+
+* change temple_hub_user name to bridgewwater-hub-user ([82115833](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/821158332e23237c142d126a92a2df511a7b9c35))
+
+* update temp-docker-runtime-alpine kit ([14324bbb](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/14324bbbcda717f315d1b278c126e5d7d9b430c4))
+
+* add [new hub user] for temp-docker-runtime-alpine and update docker-image test case ([82b5a7ff](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/82b5a7ffadab64665a0fa7678d6a8e6574ec3fa5))
+
+### 👷‍ Build System
+
+* push latest version ([2f6260f2](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/2f6260f2f8f826a2e694f15b7be8ad6f7fd192ff))
+
+* change less code at docker-image-latest ([c8285e59](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/c8285e591b4b09aa22b511b21cbc195b5ada5d8b))
+
 ## [0.3.1](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.3.0...v0.3.1) (2023-12-19)
 
 ### 👷‍ Build System
