@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.5.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.4.0...v0.5.0) (2024-04-16)
+
+### ✨ Features
+
+* ues alpine:3.19.1 and add `docker-buildx-bake-hubdocker-tag` for build ([273bf7a8](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/273bf7a8331784ae78a7910238e5219323fece20))
+
+* add .github/workflows/docker-buildx-bake-hubdocker-latest.yml for build once and merge digests ([d01ccbeb](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/d01ccbeb0c38344b9472d4e11be1c13129c05c20))
+
 ## [0.4.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.3.1...v0.4.0) (2024-04-16)
 
 ### ✨ Features
