@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.7.2](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.7.1...v0.7.2) (2024-04-17)
+
+### 🐛 Bug Fixes
+
+* build local dry run will save file let data error ([7227c08c](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/7227c08cc9fbad56fca79b54b4aecefa782c57f9))
+
 ## [0.7.1](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.7.0...v0.7.1) (2024-04-17)
 
 ### 🐛 Bug Fixes
