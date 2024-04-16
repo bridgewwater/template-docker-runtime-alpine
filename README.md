@@ -31,6 +31,10 @@ docker run --rm -it \
 
 ## source usage
 
+### env
+
+- parent image `alpine` version `3.19.1`
+
 ### todo-list
 
 - rename `bridgewwater/template-docker-runtime-alpine` to new github url
