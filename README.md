@@ -40,7 +40,9 @@ docker run --rm -it \
 - rename `bridgewwater/template-docker-runtime-alpine` to new github url
 - rename docker hub user `template-hub-user` to new org or user
 - rename docker hub `template-docker-runtime-alpine` to new docker image name
-- rename docker repo name at `docker-bake.hcl` as `template-docker-runtime-alpine` to new docker image name
+- rename docker repo name at `docker-bake.hcl`
+    - `template-docker-runtime-alpine` to new docker image name
+    - `image-all` to change `platforms`
 
 - use github action for this workflow push to docker hub, must add
     - variables `ENV_DOCKERHUB_OWNER` user of docker hub
