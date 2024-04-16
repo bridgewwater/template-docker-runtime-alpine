@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.7.1](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.7.0...v0.7.1) (2024-04-17)
+
+### 🐛 Bug Fixes
+
+* fix file at dockerx-bake ([9e37f83a](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/9e37f83ab5197477960c5478ddcfadb55b0dad35))
+
 ## [0.7.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.6.0...v0.7.0) (2024-04-17)
 
 ### ✨ Features
