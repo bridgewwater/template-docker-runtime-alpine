@@ -1,10 +1,10 @@
 ## need `New repository secret`
 
 - file `docker-image-latest.yml`
-- `DOCKERHUB_TOKEN` from [hub.docker](https://hub.docker.com/settings/security)
+- variables `ENV_DOCKERHUB_OWNER` for docker hub user
+- variables `ENV_DOCKERHUB_REPO_NAME` for docker hub repo name
+- secrets `DOCKERHUB_TOKEN` from [hub.docker](https://hub.docker.com/settings/security)
     - if close push remote can pass `DOCKERHUB_TOKEN` setting
-- `DOCKERHUB_OWNER` for docker hub user
-- `DOCKERHUB_REPO_NAME` for docker hub repo name
 
 ## usage at github action
 
@@ -27,8 +27,6 @@ jobs:
             # push_remote_flag: ${{ github.event.pull_request.merged == true }}
     # push_remote_flag: ${{ github.ref == 'refs/heads/main' }}
     secrets:
-      DOCKERHUB_OWNER: "${{ secrets.DOCKERHUB_OWNER }}"
-      DOCKERHUB_REPO_NAME: "${{ secrets.DOCKERHUB_REPO_NAME }}"
       DOCKERHUB_TOKEN: "${{ secrets.DOCKERHUB_TOKEN }}"
 ```
 

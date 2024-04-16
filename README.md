@@ -37,10 +37,10 @@ docker run --rm -it \
 - rename docker hub user `template-hub-user` to new org or user
 - rename docker hub `template-docker-runtime-alpine` to new docker image name
 
-- use github action for this workflow push to docker hub, must add at github secrets
-    - `DOCKERHUB_OWNER` user of docker hub
-    - `DOCKERHUB_REPO_NAME` repo name of docker hub
-    - `DOCKERHUB_TOKEN` token of docker hub user from [hub.docker](https://hub.docker.com/settings/security)
+- use github action for this workflow push to docker hub, must add
+    - variables `ENV_DOCKERHUB_OWNER` user of docker hub
+    - variables `ENV_DOCKERHUB_REPO_NAME` repo name of docker hub
+    - secrets `DOCKERHUB_TOKEN` token of docker hub user from [hub.docker](https://hub.docker.com/settings/security)
 
 - change `DOCKER_IMAGE_PLATFORMS: linux/amd64,linux/arm64/v8` to your need [docker buildx](https://docs.docker.com/buildx/working-with-buildx/)
   - also change `jobs.docker-image-buildx.strategy.matrix.docker_image.[platform]` same as `DOCKER_IMAGE_PLATFORMS`
