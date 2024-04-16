@@ -8,6 +8,11 @@
 
 name: docker-buildx-bake-multi-tag
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}-docker-buildx-bake-multi-tag
+  # cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+  cancel-in-progress: false
+
 on:
   workflow_call: # https://docs.github.com/actions/using-workflows/reusing-workflows#using-inputs-and-secrets-in-a-reusable-workflow
     inputs:
