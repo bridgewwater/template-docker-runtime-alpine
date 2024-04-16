@@ -84,7 +84,7 @@ jobs:
         with:
           images: |
             ${{ vars.ENV_DOCKERHUB_OWNER }}/${{ vars.ENV_DOCKERHUB_REPO_NAME }}
-            ghcr.io/${{ inputs.ghcr_package_owner_name }}/${{ secrets.DOCKERHUB_REPO_NAME }}
+            ghcr.io/${{ inputs.ghcr_package_owner_name }}/${{ vars.ENV_DOCKERHUB_REPO_NAME }}
           tags: |
             # set latest tag for main branch https://github.com/docker/metadata-action#latest-tag
             type=raw,value=latest,enable=true
@@ -146,7 +146,7 @@ jobs:
             *.platform=${{ matrix.platform }}
             *.cache-from=type=gha,scope=build-${{ env.PLATFORM_PAIR }}
             *.cache-to=type=gha,scope=build-${{ env.PLATFORM_PAIR }}
-            *.output=type=image,"name=${{ vars.ENV_DOCKERHUB_OWNER }}/${{ vars.ENV_DOCKERHUB_REPO_NAME }},ghcr.io/${{ inputs.ghcr_package_owner_name }}/${{ secrets.DOCKERHUB_REPO_NAME }}",push-by-digest=true,name-canonical=true,push=${{ inputs.push_remote_flag }}
+            *.output=type=image,"name=${{ vars.ENV_DOCKERHUB_OWNER }}/${{ vars.ENV_DOCKERHUB_REPO_NAME }},ghcr.io/${{ inputs.ghcr_package_owner_name }}/${{ vars.ENV_DOCKERHUB_REPO_NAME }}",push-by-digest=true,name-canonical=true,push=${{ inputs.push_remote_flag }}
 
       -
         name: Export digest
@@ -216,11 +216,11 @@ jobs:
         run: |
           docker buildx imagetools create $(jq -cr '.target."docker-metadata-action".tags | map(select(startswith("${{ vars.ENV_DOCKERHUB_OWNER }}/${{ vars.ENV_DOCKERHUB_REPO_NAME }}")) | "-t " + .) | join(" ")' /tmp/bake-meta.json) \
             $(printf '${{ vars.ENV_DOCKERHUB_OWNER }}/${{ vars.ENV_DOCKERHUB_REPO_NAME }}@sha256:%s ' *)
-          docker buildx imagetools create $(jq -cr '.target."docker-metadata-action".tags | map(select(startswith("ghcr.io/${{ inputs.ghcr_package_owner_name }}/${{ secrets.DOCKERHUB_REPO_NAME }}")) | "-t " + .) | join(" ")' /tmp/bake-meta.json) \
-            $(printf 'ghcr.io/${{ inputs.ghcr_package_owner_name }}/${{ secrets.DOCKERHUB_REPO_NAME }}@sha256:%s ' *)
+          docker buildx imagetools create $(jq -cr '.target."docker-metadata-action".tags | map(select(startswith("ghcr.io/${{ inputs.ghcr_package_owner_name }}/${{ vars.ENV_DOCKERHUB_REPO_NAME }}")) | "-t " + .) | join(" ")' /tmp/bake-meta.json) \
+            $(printf 'ghcr.io/${{ inputs.ghcr_package_owner_name }}/${{ vars.ENV_DOCKERHUB_REPO_NAME }}@sha256:%s ' *)
       -
         name: Inspect image
         run: |
           tag=$(jq -r '.target."docker-metadata-action".args.DOCKER_META_VERSION' /tmp/bake-meta.json)
           docker buildx imagetools inspect ${{ vars.ENV_DOCKERHUB_OWNER }}/${{ vars.ENV_DOCKERHUB_REPO_NAME }}:${tag}
-          docker buildx imagetools inspect ghcr.io/${{ inputs.ghcr_package_owner_name }}/${{ secrets.DOCKERHUB_REPO_NAME }}:${tag}
+          docker buildx imagetools inspect ghcr.io/${{ inputs.ghcr_package_owner_name }}/${{ vars.ENV_DOCKERHUB_REPO_NAME }}:${tag}
