@@ -25,7 +25,7 @@ jobs:
     needs:
       - version
     uses: ./.github/workflows/docker-buildx-bake-multi-latest.yml
-    if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/main' ) || ( github.base_ref == 'main' && github.event.pull_request.merged == true ) }}
+    if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/main' ) || github.base_ref == 'main' }}
     with:
       ghcr_package_owner_name: ${{ github.repository_owner }} # required for ghcr.io
       # push_remote_flag: ${{ github.ref == 'refs/heads/main' }}

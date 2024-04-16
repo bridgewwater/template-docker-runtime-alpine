@@ -19,7 +19,7 @@ jobs:
     needs:
       - version
     uses: ./.github/workflows/docker-buildx-bake-hubdocker-latest.yml
-    if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/main' ) || ( github.base_ref == 'main' && github.event.pull_request.merged == true ) }}
+    if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/main' ) || github.base_ref == 'main' }}
     with:
       # push_remote_flag: ${{ github.ref == 'refs/heads/main' }}
       push_remote_flag: ${{ github.event.pull_request.merged == true }}
