@@ -1,6 +1,6 @@
 ## need `New repository secret`
 
-- file `docker-image-latest.yml`
+- file `docker-buildx-bake-multi-latest.yml`
 - variables `ENV_DOCKERHUB_OWNER` for docker hub user
 - variables `ENV_DOCKERHUB_REPO_NAME` for docker hub repo name
 - secrets `DOCKERHUB_TOKEN` from [hub.docker](https://hub.docker.com/settings/security)
