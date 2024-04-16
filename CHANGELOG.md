@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.7.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.6.0...v0.7.0) (2024-04-17)
+
+### ✨ Features
+
+* update confg of bake-push ([a2d59d28](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/a2d59d282a3a31ce64cae8ae55bb653a98aa860e))
+
 ## [0.6.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.5.0...v0.6.0) (2024-04-17)
 
 ### ✨ Features
