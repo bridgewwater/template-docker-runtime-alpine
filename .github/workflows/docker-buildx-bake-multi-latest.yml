@@ -4,7 +4,7 @@
 # - variables `ENV_DOCKERHUB_REPO_NAME` repo name of docker hub
 # - secrets `DOCKERHUB_TOKEN` token of docker hub user from [hub.docker](https://hub.docker.com/settings/security)
 # add config file at `./docker-bake.hcl` or change input `docker_bake_config_file_path`
-# most use as github.event.pull_request.merged == true
+# most use as: github.event.pull_request.merged == true
 
 name: docker-buildx-bake-multi-latest
 
