@@ -52,6 +52,11 @@ jobs:
           echo "github.run_id: ${{ github.run_id }}"
           echo "github.run_number: ${{ github.run_number }}"
           echo "github.run_attempt: ${{ github.run_attempt }}"
+          echo "github.job: ${{ github.job }}"
+          echo ""
+          echo "runner.os: ${{ runner.os }}"
+          echo "runner.arch: ${{ runner.arch }}"
+          echo "runner.temp: ${{ runner.temp }}"
 
       -
         name: Checkout
@@ -82,6 +87,11 @@ jobs:
           echo "github.run_id: ${{ github.run_id }}"
           echo "github.run_number: ${{ github.run_number }}"
           echo "github.run_attempt: ${{ github.run_attempt }}"
+          echo "github.job: ${{ github.job }}"
+          echo ""
+          echo "runner.os: ${{ runner.os }}"
+          echo "runner.arch: ${{ runner.arch }}"
+          echo "runner.temp: ${{ runner.temp }}"
 
       -
         name: Prepare build
