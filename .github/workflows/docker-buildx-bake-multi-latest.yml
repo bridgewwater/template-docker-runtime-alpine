@@ -46,6 +46,13 @@ jobs:
     outputs:
       matrix: ${{ steps.platforms.outputs.matrix }}
     steps:
+
+      - name: check github context
+        run: |
+          echo "github.run_id: ${{ github.run_id }}"
+          echo "github.run_number: ${{ github.run_number }}"
+          echo "github.run_attempt: ${{ github.run_attempt }}"
+
       -
         name: Checkout
         uses: actions/checkout@v4
@@ -69,6 +76,13 @@ jobs:
       matrix:
         platform: ${{ fromJson(needs.prepare.outputs.matrix) }}
     steps:
+
+      - name: check github context
+        run: |
+          echo "github.run_id: ${{ github.run_id }}"
+          echo "github.run_number: ${{ github.run_number }}"
+          echo "github.run_attempt: ${{ github.run_attempt }}"
+
       -
         name: Prepare build
         run: |
