@@ -100,7 +100,7 @@ jobs:
         uses: actions/upload-artifact@v4
         if: ${{ inputs.push_remote_flag }}
         with:
-          name: bake-latest-meta-${{ github.run_id }}-${{ env.PLATFORM_PAIR }}
+          name: bake-latest-meta-${{ github.run_id }}-${{ github.run_attempt }}-${{ env.PLATFORM_PAIR }}
           path: ${{ runner.temp }}/bake-meta.json
           overwrite: true
           if-no-files-found: error
@@ -165,7 +165,7 @@ jobs:
         uses: actions/upload-artifact@v4
         if: ${{ inputs.push_remote_flag }}
         with:
-          name: digests-latest-${{ github.run_id }}-${{ env.PLATFORM_PAIR }}
+          name: digests-latest-${{ github.run_id }}-${{ github.run_attempt }}-${{ env.PLATFORM_PAIR }}
           path: ${{ runner.temp }}/digests/*
           overwrite: true
           if-no-files-found: error
@@ -196,7 +196,7 @@ jobs:
         with:
           # name: bake-meta
           ## https://github.com/actions/download-artifact/tree/v4?tab=readme-ov-file#breaking-changes
-          pattern: bake-latest-meta-${{ github.run_id }}-*
+          pattern: bake-latest-meta-${{ github.run_id }}-${{ github.run_attempt }}-*
           path: ${{ runner.temp }}
           merge-multiple: true
 
@@ -206,7 +206,7 @@ jobs:
         with:
           # name: digests
           ## https://github.com/actions/download-artifact/tree/v4?tab=readme-ov-file#breaking-changes
-          pattern: digests-latest-${{ github.run_id }}-*
+          pattern: digests-latest-${{ github.run_id }}-${{ github.run_attempt }}-*
           path: ${{ runner.temp }}/digests/
           merge-multiple: true
 
