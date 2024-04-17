@@ -42,32 +42,31 @@ jobs:
     uses: ./.github/workflows/version.yml
     secrets: inherit
 
-  docker-buildx-bake-hubdocker-latest:
-    name: docker-buildx-bake-hubdocker-latest
-    needs:
-      - version
-    uses: ./.github/workflows/docker-buildx-bake-hubdocker-latest.yml
-    # if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/main' ) || github.base_ref == 'main' }}
-    with:
-      # push_remote_flag: ${{ github.ref == 'refs/heads/main' }}
-      # push_remote_flag: ${{ github.event.pull_request.merged == true }}
-      push_remote_flag: true
-    secrets:
-      DOCKERHUB_TOKEN: "${{ secrets.DOCKERHUB_TOKEN }}"
-
-  # docker-buildx-bake-multi-latest:
-  #   name: docker-buildx-bake-multi-latest
+  # docker-buildx-bake-hubdocker-latest:
+  #   name: docker-buildx-bake-hubdocker-latest
   #   needs:
   #     - version
-  #   uses: ./.github/workflows/docker-buildx-bake-multi-latest.yml
+  #   uses: ./.github/workflows/docker-buildx-bake-hubdocker-latest.yml
   #   # if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/main' ) || github.base_ref == 'main' }}
   #   with:
-  #     ghcr_package_owner_name: ${{ github.repository_owner }} # required for ghcr.io
   #     # push_remote_flag: ${{ github.ref == 'refs/heads/main' }}
-  #     # push_remote_flag: ${{ github.event.pull_request.merged == true }}
-  #     push_remote_flag: true
+  #     push_remote_flag: ${{ github.event.pull_request.merged == true }}
   #   secrets:
   #     DOCKERHUB_TOKEN: "${{ secrets.DOCKERHUB_TOKEN }}"
+
+  docker-buildx-bake-multi-latest:
+    name: docker-buildx-bake-multi-latest
+    needs:
+      - version
+    uses: ./.github/workflows/docker-buildx-bake-multi-latest.yml
+    # if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/main' ) || github.base_ref == 'main' }}
+    with:
+      ghcr_package_owner_name: ${{ github.repository_owner }} # required for ghcr.io
+      # push_remote_flag: ${{ github.ref == 'refs/heads/main' }}
+      push_remote_flag: ${{ github.event.pull_request.merged == true }}
+      # push_remote_flag: true
+    secrets:
+      DOCKERHUB_TOKEN: "${{ secrets.DOCKERHUB_TOKEN }}"
 
   # docker-buildx-bake-hubdocker-tag:
   #   name: docker-buildx-bake-hubdocker-tag
