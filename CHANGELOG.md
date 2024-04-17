@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.7.3](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.7.2...v0.7.3) (2024-04-17)
+
+### 🐛 Bug Fixes
+
+* let docker-buildx-bake-hubdocker by `actions/upload-artifact@v4` send by temp ([9e67a70d](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/9e67a70de66578b1a62668e88e45b3759af37098))
+
+* let `upload-artifact@v4` use different by `github.run_attempt` ([0f7feadc](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/0f7feadc48d2e52b1bbce6b76f744292774a16fb))
+
+* let docker-build-bake-multi use runner.temp foder ([17d971d3](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/17d971d3ab1de945cd73af265a15cdd762eec8d5))
+
 ## [0.7.2](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.7.1...v0.7.2) (2024-04-17)
 
 ### 🐛 Bug Fixes
