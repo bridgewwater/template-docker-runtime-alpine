@@ -1,6 +1,6 @@
 {
   "name": "template-docker-runtime-alpine",
-  "version": "0.7.3",
+  "version": "0.8.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bridgewwater/template-docker-runtime-alpine.git"
