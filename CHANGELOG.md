@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.9.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.8.0...v0.9.0) (2024-05-03)
+
+### ✨ Features
+
+* add auto-merge-dependabot.yml to auto merge ([932e1a85](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/932e1a850a6cd3e6233168d21eec2b0e94a0753b))
+
+### 👷‍ Build System
+
+* bump convention-change/conventional-version-check ([03fada92](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/03fada928d6c0950e568646066b4e6098e4460b2))
+
 ## [0.8.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.7.3...v0.8.0) (2024-04-26)
 
 ### ✨ Features
