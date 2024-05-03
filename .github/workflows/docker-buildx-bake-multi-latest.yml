@@ -182,7 +182,7 @@ jobs:
         uses: sergeysova/jq-action@v2
         id: bake-output-containerimage-digest
         with:
-            cmd: 'echo "${{ steps.bake.outputs.metadata}}" | jq .["${{ inputs.docker_bake_targets }}"]["containerimage.digest"]'
+            cmd: '${{ steps.bake.outputs.metadata}} | jq .["${{ inputs.docker_bake_targets }}"]["containerimage.digest"]'
 
       -
         name: Export digest
@@ -190,7 +190,7 @@ jobs:
           mkdir -p ${{ runner.temp }}/digests
           digest="${{ steps.bake-output-containerimage-digest.outputs.value }}"
           touch "${{ runner.temp }}/digests/${digest#sha256:}"
-          ls -al
+          ls -al ${{ runner.temp }}/digests
 
       -
         name: Upload digest

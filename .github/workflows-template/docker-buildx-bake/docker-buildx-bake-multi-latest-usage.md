@@ -38,7 +38,7 @@ jobs:
     name: docker-bake-multi-alpine-latest
     needs:
       - version
-    uses: ./.github/workflows/docker-buildx-bake-hubdocker-latest.yml
+    uses: ./.github/workflows/docker-buildx-bake-multi-latest.yml
     # if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/main' ) || github.base_ref == 'main' }}
     with:
       docker_bake_targets: 'image-alpine'
