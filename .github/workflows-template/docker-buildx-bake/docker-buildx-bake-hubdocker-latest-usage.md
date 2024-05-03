@@ -19,7 +19,7 @@ jobs:
     needs:
       - version
     uses: ./.github/workflows/docker-buildx-bake-hubdocker-latest.yml
-    if: ${{ github.event_name != 'tag' }}
+    if: ${{ github.ref_type != 'tag' }}
     # if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/main' ) || github.base_ref == 'main' }}
     with:
       docker_bake_targets: 'image-alpine'
@@ -33,7 +33,7 @@ jobs:
     needs:
       - version
     uses: ./.github/workflows/docker-buildx-bake-hubdocker-latest.yml
-    if: ${{ github.event_name != 'tag' }}
+    if: ${{ github.ref_type != 'tag' }}
     # if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/main' ) || github.base_ref == 'main' }}
     with:
       # push_remote_flag: ${{ github.ref == 'refs/heads/main' }}
