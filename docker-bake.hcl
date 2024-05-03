@@ -17,7 +17,7 @@ group "default" {
 target "image" {
   inherits = ["docker-metadata-action"]
   context = "."
-  dockerfile =  "Dockerfile"
+  dockerfile = "Dockerfile"
 }
 
 target "image-local" {
