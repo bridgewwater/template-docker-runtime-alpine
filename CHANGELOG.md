@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.10.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.9.0...v0.10.0) (2024-05-03)
+
+### ✨ Features
+
+* add arg `docker-build-no-cache` and update desc of docker-bake.hcl ([dcb6cb5e](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/dcb6cb5e96398e482f5e8781e5404701c8b31c42))
+
 ## [0.9.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.8.0...v0.9.0) (2024-05-03)
 
 ### ✨ Features
