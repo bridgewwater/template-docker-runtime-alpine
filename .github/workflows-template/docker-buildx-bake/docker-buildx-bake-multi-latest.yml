@@ -219,6 +219,7 @@ jobs:
       -
         name: check temp path
         run: |
+          sleep 5
           ls -al ${{ runner.temp }}
 
       -
