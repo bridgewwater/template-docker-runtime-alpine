@@ -181,13 +181,13 @@ jobs:
       - name: Extract containerimage digest from bake output
         id: bake-output-containerimage-digest
         run: |
-          echo '${{ steps.bake.outputs.metadata}}' | jq -cr '.["${{ inputs.docker_bake_targets }}"]["containerimage.digest"]'
+          echo "digest=$(echo '${{ steps.bake.outputs.metadata}}' | jq -cr '.["${{ inputs.docker_bake_targets }}"]["containerimage.digest"]')" >>$GITHUB_OUTPUT
 
       -
         name: Export digest
         run: |
           mkdir -p ${{ runner.temp }}/digests
-          digest="${{ steps.bake-output-containerimage-digest.outputs.value }}"
+          digest="${{ steps.bake-output-containerimage-digest.outputs.digest }}"
           touch "${{ runner.temp }}/digests/${digest#sha256:}"
           ls -al ${{ runner.temp }}/digests
 
