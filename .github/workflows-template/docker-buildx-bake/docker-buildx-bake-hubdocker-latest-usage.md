@@ -14,8 +14,8 @@ jobs:
     name: version
     uses: ./.github/workflows/version.yml
 
-  docker-buildx-bake-hubdocker-latest:
-    name: docker-buildx-bake-hubdocker-latest
+  docker-bake-all-latest:
+    name: docker-bake-all-latest
     needs:
       - version
     uses: ./.github/workflows/docker-buildx-bake-hubdocker-latest.yml
@@ -23,6 +23,7 @@ jobs:
     with:
       # push_remote_flag: ${{ github.ref == 'refs/heads/main' }}
       push_remote_flag: ${{ github.event.pull_request.merged == true }}
+      docker_bake_targets: 'image'
     secrets:
       DOCKERHUB_TOKEN: "${{ secrets.DOCKERHUB_TOKEN }}"
 ```

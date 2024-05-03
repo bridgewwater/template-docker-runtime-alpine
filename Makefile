@@ -26,5 +26,15 @@ all: dockerTestRestartLatest
 
 clean: dockerTestPruneLatest
 
+bakeCheckConfigImageAll:
+	$(info docker bake: image-all)
+	docker buildx bake --print image-all
+
+bakeCheckConfigImageAlpine:
+	$(info docker bake: image-alpine-all)
+	docker buildx bake --print image-alpine-all
+
+bakeCheckConfigAll: bakeCheckConfigImageAll bakeCheckConfigImageAlpine
+
 help: helpDocker
 	@echo "Before run this project in docker must install docker"

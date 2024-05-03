@@ -19,10 +19,19 @@
 ### fast use
 
 ```bash
+# use as tty
 docker run --rm -it \
   --entrypoint /bin/sh \
   --name "test-template-docker-runtime-alpine" \
   template-hub-user/template-docker-runtime-alpine:latest
+
+# see versions
+docker run --rm \
+  template-hub-user/template-docker-runtime-alpine:latest \
+  bash -c ' \
+  uname -asrm && \
+  cat /etc/os-release && \
+  bash --version '
 ```
 
 ## source repo
