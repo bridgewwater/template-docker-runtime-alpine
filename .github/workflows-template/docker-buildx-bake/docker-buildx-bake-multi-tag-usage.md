@@ -30,7 +30,7 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/')
     with:
       ghcr_package_owner_name: ${{ github.repository_owner }} # required for ghcr.io
-      docker_bake_targets: 'image'
+      docker_bake_targets: 'image-alpine'
       docker-metadata-flavor-suffix: '-alpine' # default is '', can add as: -alpine -debian
       # push_remote_flag: true # default is true
     secrets:
