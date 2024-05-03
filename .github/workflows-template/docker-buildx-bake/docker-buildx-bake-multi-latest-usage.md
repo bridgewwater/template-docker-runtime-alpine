@@ -41,6 +41,7 @@ jobs:
     uses: ./.github/workflows/docker-buildx-bake-multi-latest.yml
     # if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/main' ) || github.base_ref == 'main' }}
     with:
+      ghcr_package_owner_name: ${{ github.repository_owner }} # required for ghcr.io
       docker_bake_targets: 'image-alpine'
       push_remote_flag: false # for flavor latest only one image by `image-all` so no need push remote
       docker-metadata-flavor-suffix: '-alpine'
