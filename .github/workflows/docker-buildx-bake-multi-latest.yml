@@ -179,10 +179,9 @@ jobs:
             *.output=type=image,"name=${{ vars.ENV_DOCKERHUB_OWNER }}/${{ vars.ENV_DOCKERHUB_REPO_NAME }},ghcr.io/${{ inputs.ghcr_package_owner_name }}/${{ vars.ENV_DOCKERHUB_REPO_NAME }}",push-by-digest=true,name-canonical=true
 
       - name: Extract containerimage digest from bake output
-        uses: sergeysova/jq-action@v2
         id: bake-output-containerimage-digest
-        with:
-            cmd: '${{ steps.bake.outputs.metadata}} | jq .["${{ inputs.docker_bake_targets }}"]["containerimage.digest"]'
+        run: |
+          'printf ${{ steps.bake.outputs.metadata}} | jq -cr .["${{ inputs.docker_bake_targets }}"]["containerimage.digest"]'
 
       -
         name: Export digest
