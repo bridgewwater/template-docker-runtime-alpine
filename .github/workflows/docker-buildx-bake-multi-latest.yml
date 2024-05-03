@@ -178,8 +178,8 @@ jobs:
             *.cache-to=type=gha,scope=build-${{ env.PLATFORM_PAIR }}
             *.output=type=image,"name=${{ vars.ENV_DOCKERHUB_OWNER }}/${{ vars.ENV_DOCKERHUB_REPO_NAME }},ghcr.io/${{ inputs.ghcr_package_owner_name }}/${{ vars.ENV_DOCKERHUB_REPO_NAME }}",push-by-digest=true,name-canonical=true
 
-      - name: Extract containerimage digest from bake output
-        id: bake-output-containerimage-digest
+      - name: Extract container image digest from bake output
+        id: bake-output-container-image-digest
         run: |
           echo "digest=$(echo '${{ steps.bake.outputs.metadata}}' | jq -cr '.["${{ inputs.docker_bake_targets }}"]["containerimage.digest"]')" >>$GITHUB_OUTPUT
 
@@ -187,7 +187,7 @@ jobs:
         name: Export digest
         run: |
           mkdir -p ${{ runner.temp }}/digests
-          digest="${{ steps.bake-output-containerimage-digest.outputs.digest }}"
+          digest="${{ steps.bake-output-container-image-digest.outputs.digest }}"
           touch "${{ runner.temp }}/digests/${digest#sha256:}"
           ls -al ${{ runner.temp }}/digests
 
