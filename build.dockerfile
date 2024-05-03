@@ -9,8 +9,10 @@ FROM alpine:3.19.1
 
 #USER root
 
-# add alpine component with: mirrors.aliyun.com
+# proxy apk repo with: mirrors.aliyun.com
 RUN cp /etc/apk/repositories /etc/apk/repositories.bak && \
-  sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories && \
-  apk --no-cache add ca-certificates bash && \
+  sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
+
+# add alpine component
+RUN apk --no-cache add ca-certificates bash && \
   rm -rf /var/cache/apk/* /tmp/*
