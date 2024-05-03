@@ -25,6 +25,7 @@ jobs:
     needs:
       - version
     uses: ./.github/workflows/docker-buildx-bake-multi-latest.yml
+    if: ${{ github.event_name != 'tag' }}
     # if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/main' ) || github.base_ref == 'main' }}
     with:
       ghcr_package_owner_name: ${{ github.repository_owner }} # required for ghcr.io
@@ -39,6 +40,7 @@ jobs:
     needs:
       - version
     uses: ./.github/workflows/docker-buildx-bake-multi-latest.yml
+    if: ${{ github.event_name != 'tag' }}
     # if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/main' ) || github.base_ref == 'main' }}
     with:
       ghcr_package_owner_name: ${{ github.repository_owner }} # required for ghcr.io
