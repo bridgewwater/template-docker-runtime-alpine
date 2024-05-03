@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.12.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.11.0...v0.12.0) (2024-05-04)
+
+### 🐛 Bug Fixes
+
+* digest can not find by change docker_bake_targets ([1409c0e0](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/1409c0e0392b0e3a49eddd9577405bd5b66a2240)), fix [#20](https://github.com/bridgewwater/template-docker-runtime-alpine/issues/20)
+
+### ✨ Features
+
+* add show out digest  `Export digest` ([ac3e6a84](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/ac3e6a849ba3e3f0e527d70965ecff740a233e26))
+
 ## [0.11.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.10.0...v0.11.0) (2024-05-04)
 
 ### ✨ Features
