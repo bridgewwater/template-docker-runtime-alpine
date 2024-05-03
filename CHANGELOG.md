@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.12.1](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.12.0...v0.12.1) (2024-05-04)
+
+### 🐛 Bug Fixes
+
+* fix demo config and `deploy-tag` needs ([0e1543ca](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/0e1543ca84753cd846b897cbd9d560b10084bfeb))
+
 ## [0.12.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.11.0...v0.12.0) (2024-05-04)
 
 ### 🐛 Bug Fixes
