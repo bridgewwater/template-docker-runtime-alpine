@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.11.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.10.0...v0.11.0) (2024-05-04)
+
+### ✨ Features
+
+* support bake targets and flavor ([f54b911c](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/f54b911c79086008fa0d39415d63d9c950a8f9a7)), feat [#18](https://github.com/bridgewwater/template-docker-runtime-alpine/issues/18)
+
 ## [0.10.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.9.0...v0.10.0) (2024-05-03)
 
 ### ✨ Features
