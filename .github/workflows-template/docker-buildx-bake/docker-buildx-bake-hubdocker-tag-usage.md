@@ -32,7 +32,7 @@ jobs:
   deploy-tag:
     needs:
       - version
-      - docker-bake-multi-alpine-all-tag
+      - docker-bake-all-tag
     name: deploy-tag
     uses: ./.github/workflows/deploy-tag.yml
     if: startsWith(github.ref, 'refs/tags/')
