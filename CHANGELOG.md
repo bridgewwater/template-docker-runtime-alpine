@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.13.1](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.13.0...v0.13.1) (2024-05-04)
+
+### ♻ Refactor
+
+* change makefile task name bakeCheckConfigImageBasic ([3bbd11e5](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/3bbd11e5c57bd303b63fe90ea48e13ab8cd41ae6))
+
 ## [0.13.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.12.6...v0.13.0) (2024-05-04)
 
 ### BREAKING CHANGE:
