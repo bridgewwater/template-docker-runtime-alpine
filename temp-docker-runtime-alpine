@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-temple_version='0.12.4'
+temple_version='0.12.5'
 new_version_for_dev='1.0.0'
 #temple url
 temple_url="https://github.com/bridgewwater/template-docker-runtime-alpine.git"
