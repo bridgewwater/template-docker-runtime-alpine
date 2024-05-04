@@ -23,7 +23,7 @@ on:
         type: boolean
       docker_bake_targets:
         description: 'docker bake targets'
-        default: 'image'
+        default: 'image-basic'
         required: false
         type: string
       docker-metadata-flavor-suffix:

@@ -51,7 +51,8 @@ docker run --rm \
 - rename docker hub `template-docker-runtime-alpine` to new docker image name
 - rename docker repo name at `docker-bake.hcl`
     - `template-docker-runtime-alpine` to new docker image name
-    - `image-all` to change `platforms`
+    - `image-basic-all` to change `platforms`
+    - `image-alpine-all` to change `platforms`
 
 - use github action for this workflow push to docker hub, must add
     - variables `ENV_DOCKERHUB_OWNER` user of docker hub

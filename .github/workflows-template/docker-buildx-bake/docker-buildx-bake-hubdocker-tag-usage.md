@@ -16,14 +16,14 @@ jobs:
 
   ### deploy tag start
 
-  docker-bake-all-tag:
-    name: docker-bake-all-tag
+  docker-bake-basic-all-tag:
+    name: docker-bake-basic-all-tag
     needs:
       - version
     uses: ./.github/workflows/docker-buildx-bake-hubdocker-tag.yml
     if: startsWith(github.ref, 'refs/tags/')
     with:
-      docker_bake_targets: 'image'
+      docker_bake_targets: 'image-basic'
       docker-metadata-flavor-suffix: '' # default is '', can add as: -alpine -debian
       # push_remote_flag: true # default is true
     secrets:
@@ -32,7 +32,7 @@ jobs:
   deploy-tag:
     needs:
       - version
-      - docker-bake-all-tag
+      - docker-bake-basic-all-tag
     name: deploy-tag
     uses: ./.github/workflows/deploy-tag.yml
     if: startsWith(github.ref, 'refs/tags/')

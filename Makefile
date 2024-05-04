@@ -27,8 +27,8 @@ all: dockerTestRestartLatest
 clean: dockerTestPruneLatest
 
 bakeCheckConfigImageAll:
-	$(info docker bake: image-all)
-	docker buildx bake --print image-all
+	$(info docker bake: image-basic-all)
+	docker buildx bake --print image-basic-all
 
 bakeCheckConfigImageAlpine:
 	$(info docker bake: image-alpine-all)

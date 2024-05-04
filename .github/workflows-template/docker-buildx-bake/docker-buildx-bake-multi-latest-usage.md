@@ -20,8 +20,8 @@ jobs:
     name: version
     uses: ./.github/workflows/version.yml
 
-  docker-bake-multi-all-latest:
-    name: docker-bake-multi-all-latest
+  docker-bake-multi-basic-all-latest:
+    name: docker-bake-multi-basic-all-latest
     needs:
       - version
     uses: ./.github/workflows/docker-buildx-bake-multi-latest.yml
@@ -31,12 +31,12 @@ jobs:
       ghcr_package_owner_name: ${{ github.repository_owner }} # required for ghcr.io
       # push_remote_flag: ${{ github.ref == 'refs/heads/main' }}
       push_remote_flag: ${{ github.event.pull_request.merged == true }}
-      docker_bake_targets: 'image'
+      docker_bake_targets: 'image-basic'
     secrets:
       DOCKERHUB_TOKEN: "${{ secrets.DOCKERHUB_TOKEN }}"
 
-  docker-bake-multi-alpine-latest:
-    name: docker-bake-multi-alpine-latest
+  docker-bake-multi-alpine-all-latest:
+    name: docker-bake-multi-alpine-all-latest
     needs:
       - version
     uses: ./.github/workflows/docker-buildx-bake-multi-latest.yml
@@ -45,7 +45,7 @@ jobs:
     with:
       ghcr_package_owner_name: ${{ github.repository_owner }} # required for ghcr.io
       docker_bake_targets: 'image-alpine'
-      push_remote_flag: false # for flavor latest only one image by `image-all` so no need push remote
+      push_remote_flag: false # for flavor latest only one image by `image-basic-all` so no need push remote
       docker-metadata-flavor-suffix: '-alpine'
     secrets:
       DOCKERHUB_TOKEN: "${{ secrets.DOCKERHUB_TOKEN }}"
