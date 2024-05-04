@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.13.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.12.6...v0.13.0) (2024-05-04)
+
+### BREAKING CHANGE:
+
+* must change  docker-bake.hcl to use
+
+### ✨ Features
+
+* change default taget `image` to `image-basic` to let push different flavor different ([71e11910](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/71e1191039b919901a9b418288d7a450cfbbf939)), feat [#26](https://github.com/bridgewwater/template-docker-runtime-alpine/issues/26)
+
 ## [0.12.6](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.12.5...v0.12.6) (2024-05-04)
 
 ### 🐛 Bug Fixes
