@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.12.6](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.12.5...v0.12.6) (2024-05-04)
+
+### 🐛 Bug Fixes
+
+* merge config with different `docker_bake_targets with` be same path ([fb6af1af](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/fb6af1afa4fd7089506bb6f70cc168f799c60383)), fix [#24](https://github.com/bridgewwater/template-docker-runtime-alpine/issues/24)
+
 ## [0.12.5](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.12.4...v0.12.5) (2024-05-04)
 
 ### 🐛 Bug Fixes
