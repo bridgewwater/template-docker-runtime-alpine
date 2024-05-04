@@ -36,8 +36,8 @@ jobs:
     secrets:
       DOCKERHUB_TOKEN: "${{ secrets.DOCKERHUB_TOKEN }}"
 
-  docker-bake-multi-all-tag:
-    name: docker-bake-multi-all-tag
+  docker-bake-multi-basic-all-tag:
+    name: docker-bake-multi-basic-all-tag
     needs:
       - version
       - docker-bake-multi-alpine-all-tag
@@ -45,7 +45,7 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/')
     with:
       ghcr_package_owner_name: ${{ github.repository_owner }} # required for ghcr.io
-      docker_bake_targets: 'image'
+      docker_bake_targets: 'image-basic'
       docker-metadata-flavor-suffix: '' # default is '', can add as: -alpine -debian
       # push_remote_flag: true # default is true
     secrets:
@@ -55,7 +55,7 @@ jobs:
   deploy-tag:
     needs:
       - version
-      - docker-bake-multi-all-tag
+      - docker-bake-multi-basic-all-tag
     name: deploy-tag
     uses: ./.github/workflows/deploy-tag.yml
     if: startsWith(github.ref, 'refs/tags/')

@@ -14,8 +14,8 @@ jobs:
     name: version
     uses: ./.github/workflows/version.yml
 
-  docker-bake-all-alpine-latest:
-    name: docker-bake-all-alpine-latest
+  docker-bake-alpine-all-latest:
+    name: docker-bake-alpine-all-latest
     needs:
       - version
     uses: ./.github/workflows/docker-buildx-bake-hubdocker-latest.yml
@@ -23,13 +23,13 @@ jobs:
     # if: ${{ ( github.event_name == 'push' && github.ref == 'refs/heads/main' ) || github.base_ref == 'main' }}
     with:
       docker_bake_targets: 'image-alpine'
-      push_remote_flag: false # for flavor latest only one image by `image-all` so no need push remote
+      push_remote_flag: false # for flavor latest only one image by `image-basic-all` so no need push remote
       docker-metadata-flavor-suffix: '-alpine'
     secrets:
       DOCKERHUB_TOKEN: "${{ secrets.DOCKERHUB_TOKEN }}"
 
-  docker-bake-all-latest:
-    name: docker-bake-all-latest
+  docker-bake-basic-all-latest:
+    name: docker-bake-basic-all-latest
     needs:
       - version
     uses: ./.github/workflows/docker-buildx-bake-hubdocker-latest.yml
@@ -38,7 +38,7 @@ jobs:
     with:
       # push_remote_flag: ${{ github.ref == 'refs/heads/main' }}
       push_remote_flag: ${{ github.event.pull_request.merged == true }}
-      docker_bake_targets: 'image'
+      docker_bake_targets: 'image-basic'
     secrets:
       DOCKERHUB_TOKEN: "${{ secrets.DOCKERHUB_TOKEN }}"
 ```
