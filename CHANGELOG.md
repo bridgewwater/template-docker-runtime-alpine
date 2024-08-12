@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.13.2](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.13.1...v0.13.2) (2024-08-13)
+
+### 👷‍ Build System
+
+* bump docker/bake-action from 4 to 5 ([4f1982ee](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/4f1982ee6a689ea3f1146070ab6f82b9d77f83ff))
+
 ## [0.13.1](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.13.0...v0.13.1) (2024-05-04)
 
 ### ♻ Refactor
