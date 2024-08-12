@@ -49,6 +49,11 @@ on:
         default: false
         required: false
         type: boolean
+      docker-build-timeout-minutes:
+        description: 'docker build timeout minutes'
+        default: 30
+        required: false
+        type: number
     secrets:
       DOCKERHUB_TOKEN:
         description: 'docker hub token'
@@ -161,6 +166,7 @@ jobs:
         name: Build
         id: bake
         uses: docker/bake-action@v5
+        timeout-minutes: ${{ inputs.docker-build-timeout-minutes }} # default 360
         with:
           files: |
             ${{ inputs.docker_bake_config_file_path }}
