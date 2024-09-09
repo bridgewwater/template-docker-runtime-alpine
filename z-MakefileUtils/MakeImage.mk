@@ -182,6 +182,8 @@ helpDocker:
 	@echo ""
 	@echo "- then use to show how to build docker parent image"
 	@echo "$$ make dockerRunContainerParentBuild"
+	@echo "- or run and check parent image user"
+	@echo "$$ make dockerRunContainerParentByUser"
 	@echo "- and prune resource at parent image"
 	@echo "$$ make dockerPruneContainerParentBuild"
 	@echo ""

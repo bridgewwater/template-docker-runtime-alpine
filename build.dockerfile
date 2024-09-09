@@ -5,7 +5,7 @@
 # maintainer="https://github.com/bridgewwater/template-docker-runtime-alpine"
 
 # https://hub.docker.com/_/alpine/tags
-FROM alpine:3.19.1
+FROM alpine:3.20.3
 
 #USER root
 
