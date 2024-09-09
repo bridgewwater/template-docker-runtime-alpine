@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.14.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.13.2...v0.14.0) (2024-09-09)
+
+### ✨ Features
+
+* update Alpine base image to 3.20.3 ([67b26720](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/67b26720b85928c42c3bac645ba495f2694e9851))
+
+* streamline docker build and test workflow ([548697eb](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/548697eb359bef48050ac2c2a3941e49354328a9))
+
 ## [0.13.2](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.13.1...v0.13.2) (2024-08-13)
 
 ### 👷‍ Build System
