@@ -1,5 +1,3 @@
-.PHONY: test check clean dist all
-
 TOP_DIR := $(shell pwd)
 
 # default latest
@@ -20,21 +18,28 @@ INFO_TEST_BUILD_DOCKER_CONTAINER_ARGS =
 
 include z-MakefileUtils/MakeImage.mk
 
+.PHONY: env
 env: dockerEnv
 
+.PHONY: all
 all: dockerTestRestartLatest
 
+.PHONY: clean
 clean: dockerTestPruneLatest
 
+.PHONY: bakeCheckConfig
 bakeCheckConfigImageBasic:
 	$(info docker bake: image-basic-all)
 	docker buildx bake --print image-basic-all
 
+.PHONY: bakeCheckConfig
 bakeCheckConfigImageAlpine:
 	$(info docker bake: image-alpine-all)
 	docker buildx bake --print image-alpine-all
 
+.PHONY: bakeCheckConfig
 bakeCheckConfigAll: bakeCheckConfigImageBasic bakeCheckConfigImageAlpine
 
+.PHONY: help
 help: helpDocker
 	@echo "Before run this project in docker must install docker"
