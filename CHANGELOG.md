@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.14.2](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.14.1...v0.14.2) (2024-11-08)
+
+### 📝 Documentation
+
+* update guidelines and remove unused content ([7485be12](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/7485be1284f70483116fec3ecf9220db1749e448))
+
 ## [0.14.1](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.14.0...v0.14.1) (2024-11-08)
 
 ## [0.14.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.13.2...v0.14.0) (2024-09-09)
