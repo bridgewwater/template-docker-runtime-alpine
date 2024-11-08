@@ -90,6 +90,7 @@ jobs:
       - name: check version and conventional
         run: |
           echo "env SHA-SHORT: ${{ env.SHA-SHORT }}"
+          echo "sha: ${{ steps.check-version.outputs.sha }}"
           echo "short-sha: ${{ steps.check-version.outputs.short-sha }}"
           echo "tag-version: ${{ steps.check-version.outputs.tag-version }}"
           echo "env GIT_TAG_VERSION: ${{ env.GIT_TAG_VERSION }}"
