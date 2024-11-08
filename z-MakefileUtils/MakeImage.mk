@@ -130,8 +130,12 @@ dockerTestRmLatest:
 dockerTestRmiLatest:
 	-docker rmi -f ${ENV_INFO_BUILD_DOCKER_SOURCE_IMAGE}:${ENV_INFO_BUILD_DOCKER_TAG}
 
+.PHONY: dockerTestReBuildLatest
+dockerTestReBuildLatest: dockerTestRmLatest dockerTestRmiLatest dockerTestBuildLatest
+	@echo "re-build ${ENV_INFO_TEST_TAG_BUILD_DOCKER_CONTAINER_NAME} ${ENV_INFO_BUILD_DOCKER_SOURCE_IMAGE}:${ENV_INFO_BUILD_DOCKER_TAG}"
+
 .PHONY: dockerTestRestartLatest
-dockerTestRestartLatest: dockerTestRmLatest dockerTestRmiLatest dockerTestBuildLatest dockerTestRunLatest
+dockerTestRestartLatest: dockerTestReBuildLatest dockerTestRunLatest
 	@echo "restart ${ENV_INFO_TEST_TAG_BUILD_DOCKER_CONTAINER_NAME} ${ENV_INFO_BUILD_DOCKER_SOURCE_IMAGE}:${ENV_INFO_BUILD_DOCKER_TAG}"
 
 .PHONY: dockerTestStopLatest
@@ -187,6 +191,8 @@ helpDocker:
 	@echo "- and prune resource at parent image"
 	@echo "$$ make dockerPruneContainerParentBuild"
 	@echo ""
+	@echo "- test build image use ./${ENV_INFO_TEST_BUILD_DOCKER_FILE}"
+	@echo "$$ make dockerTestReBuildLatest"
 	@echo "- test run container use ./${ENV_INFO_TEST_BUILD_DOCKER_FILE}"
 	@echo "$$ make dockerTestRestartLatest"
 	@echo "- prune test container and image"
