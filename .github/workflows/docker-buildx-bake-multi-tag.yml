@@ -163,6 +163,13 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       -
+        name: check build files
+        run: |
+          echo "docker_bake_config_file_path: ${{ inputs.docker_bake_config_file_path }}"
+          ls -al ${{ runner.temp }}/${{ inputs.docker_bake_targets}}
+          cat ${{ runner.temp }}/${{ inputs.docker_bake_targets}}/bake-meta.json
+
+      -
         name: Build
         id: bake
         uses: docker/bake-action@v5
