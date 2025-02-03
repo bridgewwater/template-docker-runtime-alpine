@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.14.4](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.14.3...v0.14.4) (2025-02-03)
+
+### ♻ Refactor
+
+* remove unnecessary cwd:// prefix from file paths ([81369a65](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/81369a65b77eaed023b89bb97661209ae7543f3c))
+
+* update file paths to use cwd:// prefix ([ef63900d](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/ef63900dc6970901e9052a3d762dfd7329e0df4e))
+
+### 👷‍ Build System
+
+* upgrade temple version and enhance logging ([df785703](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/df785703dca21c7205908df0d12592f090759be0))
+
+* update docker bake config file path reference ([5a267bc0](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/5a267bc0c9847cea222d94e8a8c3a3d741e2948c)), feat [#30](https://github.com/bridgewwater/template-docker-runtime-alpine/issues/30)
+
+* update docker bake-action to v6 and add build file check ([53592e54](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/53592e54ef38f4feb090c8df5be77cf13a1469bf))
+
+* add debug step to check build files ([220de78f](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/220de78f0d91377636088d45b2b679c29dfd7b5c))
+
 ## [0.14.3](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.14.2...v0.14.3) (2024-11-08)
 
 ### 👷‍ Build System
