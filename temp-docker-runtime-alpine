@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-temple_version='0.14.0'
+temple_version='0.14.4'
 new_version_for_dev='1.0.0'
 #temple url
 temple_url="https://github.com/bridgewwater/template-docker-runtime-alpine.git"
@@ -28,7 +28,7 @@ ${shell_run_name} can use fast init docker runtime project with github template
 
 default repo setting
   group/user: ${temple_group}
-  reop host : ${temple_repo_host}
+  repo host : ${temple_repo_host}
 
 Usage: ${shell_run_name} [newproject] [new group/user] [new host] [new hub user]
 
@@ -46,21 +46,53 @@ if [[ $# -eq 1 ]]; then
   fi
 fi
 
-pV() {
-  echo -e "\033[;36m$1\033[0m"
+# log debug enable 1 open 0 close
+LOG_DEBUG_ENABLE=1
+# log color enable 1 open 0 close
+LOG_COLOR_ENABLE=1
+
+pV(){
+  if [[ 0 -ne ${LOG_COLOR_ENABLE} ]]; then
+    echo -e "\033[;37m$1\033[0m"
+  else
+    echo -e "$1"
+  fi
 }
-pI() {
-  echo -e "\033[;32mINFO: $1\033[0m"
+pI(){
+  if [[ 0 -ne ${LOG_COLOR_ENABLE} ]]; then
+    echo -e "\033[;32mINFO: $1\033[0m"
+  else
+    echo -e "$1"
+  fi
 }
-pD() {
-  echo -e "\033[;34mDEBUG: $1\033[0m"
+pD(){
+  if [[ 0 -ne ${LOG_DEBUG_ENABLE} ]]; then
+    if [[ 0 -ne ${LOG_COLOR_ENABLE} ]]; then
+      echo -e "\033[;34mDEBUG: $1\033[0m"
+    else
+      echo -e "$1"
+    fi
+  fi
 }
-pW() {
-  echo -e "\033[;33mWARN: $1\033[0m"
+pW(){
+  if [[ 0 -ne ${LOG_COLOR_ENABLE} ]]; then
+    echo -e "\033[;33mWARN: $1\033[0m"
+  else
+    echo -e "$1"
+  fi
 }
-pE() {
-  echo -e "\033[;31mERROR: $1\033[0m"
+pE(){
+  if [[ 0 -ne ${LOG_COLOR_ENABLE} ]]; then
+    echo -e "\033[;31mERROR: $1\033[0m"
+  else
+    echo -e "$1"
+  fi
 }
+#pV "V"
+#pI "I"
+#pD "D"
+#pW "W"
+#pE "E"
 
 checkFuncBack() {
   if [ ! $? -eq 0 ]; then
