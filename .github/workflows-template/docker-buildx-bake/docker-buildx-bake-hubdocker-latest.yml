@@ -154,6 +154,7 @@ jobs:
         run: |
           echo "docker_bake_config_file_path: ${{ inputs.docker_bake_config_file_path }}"
           ls -al ${{ runner.temp }}/${{ inputs.docker_bake_targets}}
+          echo "show: ${{ runner.temp }}/${{ inputs.docker_bake_targets}}/bake-meta.json"
           cat ${{ runner.temp }}/${{ inputs.docker_bake_targets}}/bake-meta.json
 
       -
