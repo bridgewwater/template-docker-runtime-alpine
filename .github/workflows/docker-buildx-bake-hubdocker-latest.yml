@@ -117,7 +117,7 @@ jobs:
         name: Rename meta bake definition file
         run: |
           mkdir -p "${{ runner.temp }}/${{ inputs.docker_bake_targets}}"
-          mv "${{ steps.meta.outputs.bake-file }}" "cwd://${{ runner.temp }}/${{ inputs.docker_bake_targets}}/bake-meta.json"
+          mv "${{ steps.meta.outputs.bake-file }}" "${{ runner.temp }}/${{ inputs.docker_bake_targets}}/bake-meta.json"
 
       -
         name: Upload meta bake definition
@@ -125,7 +125,7 @@ jobs:
         if: ${{ inputs.push_remote_flag }}
         with:
           name: bake-latest-meta-${{ github.run_id }}-${{ github.run_attempt }}-${{ inputs.docker_bake_targets }}-${{ env.PLATFORM_PAIR }}
-          path: cwd://${{ runner.temp }}/${{ inputs.docker_bake_targets}}/bake-meta.json
+          path: ${{ runner.temp }}/${{ inputs.docker_bake_targets}}/bake-meta.json
           overwrite: true
           if-no-files-found: error
           retention-days: 1
@@ -152,10 +152,10 @@ jobs:
       -
         name: check build files
         run: |
-          echo "docker_bake_config_file_path: cwd://${{ inputs.docker_bake_config_file_path }}"
+          echo "docker_bake_config_file_path: ${{ inputs.docker_bake_config_file_path }}"
           ls -al ${{ runner.temp }}/${{ inputs.docker_bake_targets}}
-          echo "show: cwd://${{ runner.temp }}/${{ inputs.docker_bake_targets}}/bake-meta.json"
-          cat cwd://${{ runner.temp }}/${{ inputs.docker_bake_targets}}/bake-meta.json
+          echo "show: ${{ runner.temp }}/${{ inputs.docker_bake_targets}}/bake-meta.json"
+          cat ${{ runner.temp }}/${{ inputs.docker_bake_targets}}/bake-meta.json
 
       -
         name: Build
@@ -263,10 +263,10 @@ jobs:
         name: Create manifest list and push
         working-directory: ${{ runner.temp }}/${{ inputs.docker_bake_targets}}/digests/
         run: |
-          docker buildx imagetools create $(jq -cr '.target."docker-metadata-action".tags | map(select(startswith("${{ vars.ENV_DOCKERHUB_OWNER }}/${{ vars.ENV_DOCKERHUB_REPO_NAME }}")) | "-t " + .) | join(" ")' cwd://${{ runner.temp }}/${{ inputs.docker_bake_targets}}/bake-meta.json) \
+          docker buildx imagetools create $(jq -cr '.target."docker-metadata-action".tags | map(select(startswith("${{ vars.ENV_DOCKERHUB_OWNER }}/${{ vars.ENV_DOCKERHUB_REPO_NAME }}")) | "-t " + .) | join(" ")' ${{ runner.temp }}/${{ inputs.docker_bake_targets}}/bake-meta.json) \
             $(printf '${{ vars.ENV_DOCKERHUB_OWNER }}/${{ vars.ENV_DOCKERHUB_REPO_NAME }}@sha256:%s ' *)
       -
         name: Inspect image
         run: |
-          tag=$(jq -r '.target."docker-metadata-action".args.DOCKER_META_VERSION' cwd://${{ runner.temp }}/${{ inputs.docker_bake_targets}}/bake-meta.json)
+          tag=$(jq -r '.target."docker-metadata-action".args.DOCKER_META_VERSION' ${{ runner.temp }}/${{ inputs.docker_bake_targets}}/bake-meta.json)
           docker buildx imagetools inspect ${{ vars.ENV_DOCKERHUB_OWNER }}/${{ vars.ENV_DOCKERHUB_REPO_NAME }}:${tag}
