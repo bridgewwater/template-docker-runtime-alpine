@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.14.5](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/v0.14.4...v0.14.5) (2025-12-29)
+
+### 👷‍ Build System
+
+* add manual trigger for workflow ([237189df](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/237189df60fff3cf3bfbbd3824681a02d798a3a8))
+
+* bump actions/checkout from 4 to 6 ([c051f0c3](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/c051f0c3a9f7059950e0418e84ba11e7191b6582))
+
+* bump actions/download-artifact from 4 to 6 ([ae40a601](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/ae40a6012190a96bc75d9621d47642938ba52078))
+
+* bump actions/upload-artifact from 4 to 5 ([0b51ea0b](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/0b51ea0b14ab4ed0808e39afe31995678b9b12d1))
+
+* update GitHub release action to v2 ([1c6e7475](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/1c6e747506e40b87c781f48a4bb6af6349282422))
+
 ## [0.14.4](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/0.14.3...v0.14.4) (2025-02-03)
 
 ### ♻ Refactor
