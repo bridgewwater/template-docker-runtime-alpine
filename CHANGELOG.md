@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.15.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/v0.14.5...v0.15.0) (2026-01-02)
+
+### ✨ Features
+
+* add Docker Hub description update functionality ([7609dd95](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/7609dd957077a4c6c72396d644402da55cc056e0))
+
 ## [0.14.5](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/v0.14.4...v0.14.5) (2025-12-29)
 
 ### 👷‍ Build System
