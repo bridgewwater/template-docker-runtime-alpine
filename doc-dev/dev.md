@@ -47,4 +47,4 @@ $ make dockerTestRestartLatest
 $ make clean
 ```
 
-then change github workflows config to use
+Then update the GitHub Actions workflow configuration to use the new image tag.
