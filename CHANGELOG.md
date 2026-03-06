@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.16.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/v0.15.1...v0.16.0) (2026-03-06)
+
+### ✨ Features
+
+* update meta bake definition file handling ([2cd5e54f](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/2cd5e54fe199dbff4152f2be8d8018260e109a57))
+
 ## [0.15.1](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/v0.15.0...v0.15.1) (2026-01-02)
 
 ### 👷‍ Build System
