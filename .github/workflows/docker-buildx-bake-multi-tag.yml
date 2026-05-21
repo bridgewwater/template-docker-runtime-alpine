@@ -203,8 +203,15 @@ jobs:
 
       - name: Extract container image digest from bake output
         id: bake-output-container-image-digest
+        env:
+          BAKE_METADATA: ${{ steps.bake.outputs.metadata }}
         run: |
-          echo "digest=$(echo '${{ steps.bake.outputs.metadata}}' | jq -cr '.["${{ inputs.docker_bake_targets }}"]["containerimage.digest"]')" >>$GITHUB_OUTPUT
+          digest="$(jq -cr --arg target "${{ inputs.docker_bake_targets }}" '.[$target]["containerimage.digest"] // empty' <<<"$BAKE_METADATA")"
+          if [ -z "$digest" ] || [ "$digest" = "null" ]; then
+            echo "failed to extract container image digest from bake output metadata"
+            exit 1
+          fi
+          echo "digest=$digest" >>$GITHUB_OUTPUT
 
       -
         name: Export digest
