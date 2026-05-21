@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.16.1](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/v0.16.0...v0.16.1) (2026-05-21)
+
+### 🐛 Bug Fixes
+
+* improve extraction of container image digest from bake output ([2e2a95c1](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/2e2a95c1d7c20e43b6b5baecf1bc649322381e7a))
+
 ## [0.16.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/v0.15.1...v0.16.0) (2026-03-06)
 
 ### ✨ Features
