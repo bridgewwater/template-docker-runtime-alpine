@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.17.0](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/v0.16.1...v0.17.0) (2026-09-28)
+
+### ✨ Features
+
+* enhance cache configuration in Docker workflows ([cb296253](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/cb296253349c6bff8ac0b2c35d95521acc3ec518))
+
+### 👷‍ Build System
+
+* bump actions/checkout from 6 to 7 ([0ac15d90](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/0ac15d90938a1cd17139c4b08843e2ce6cf586a4))
+
 ## [0.16.1](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/v0.16.0...v0.16.1) (2026-05-21)
 
 ### 🐛 Bug Fixes
