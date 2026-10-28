@@ -2,7 +2,7 @@
 
 ### env
 
-- parent image `alpine` version `3.20.3`
+- parent image `alpine` version `3.21.8`
 
 ### todo-list
 
