@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.17.2](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/v0.17.1...v0.17.2) (2026-10-30)
+
+### 👷‍ Build System
+
+* add 'onlatest=true' to docker metadata flavor suffix ([ff12cd85](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/ff12cd8503f577781acf0a1416807456040ccb4e))
+
 ## [0.17.1](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/v0.17.0...v0.17.1) (2026-10-28)
 
 ### 👷‍ Build System
