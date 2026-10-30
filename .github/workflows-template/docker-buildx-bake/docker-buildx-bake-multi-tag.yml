@@ -116,7 +116,7 @@ jobs:
             type=semver,pattern={{version}}
           flavor: |
             latest=auto
-            suffix=${{ inputs.docker-metadata-flavor-suffix }}
+            suffix=${{ inputs.docker-metadata-flavor-suffix }},onlatest=true
       -
         name: Rename meta bake definition file
         run: |
