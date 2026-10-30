@@ -265,8 +265,8 @@ jobs:
         run: |
           echo "Attempted tags:"
           jq -r '.target."docker-metadata-action".tags[]' "${{ runner.temp }}/${{ inputs.docker_bake_targets }}/bake-meta.json"
-          ls -al ${{ runner.temp }}/${{ inputs.docker_bake_targets}}
-          ls -al ${{ runner.temp }}/${{ inputs.docker_bake_targets}}/digests/
+          ls -al ${{ runner.temp }}/${{ inputs.docker_bake_targets }}
+          ls -al ${{ runner.temp }}/${{ inputs.docker_bake_targets }}/digests/
 
       -
         name: Set up Docker Buildx
