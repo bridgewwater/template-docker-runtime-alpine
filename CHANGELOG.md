@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.17.3](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/v0.17.2...v0.17.3) (2026-10-31)
+
+### 👷‍ Build System
+
+* fix whitespace in ls command for better readability ([e733e1e4](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/e733e1e450e771331d54194a507252c198cf618e))
+
 ## [0.17.2](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/v0.17.1...v0.17.2) (2026-10-30)
 
 ### 👷‍ Build System
