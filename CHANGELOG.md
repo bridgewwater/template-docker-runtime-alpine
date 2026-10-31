@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file. See [convention-change-log](https://github.com/convention-change/convention-change-log) for commit guidelines.
 
+## [0.17.4](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/v0.17.3...v0.17.4) (2026-11-01)
+
+### 🔧 Continuous Integration
+
+* update push_remote_flag conditions for pull requests ([c68eccb6](https://github.com/bridgewwater/template-docker-runtime-alpine/commit/c68eccb6dbd9a3dc0a79cb27f5eb05547cebf74b))
+
 ## [0.17.3](https://github.com/bridgewwater/template-docker-runtime-alpine/compare/v0.17.2...v0.17.3) (2026-10-31)
 
 ### 👷‍ Build System
